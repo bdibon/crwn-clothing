@@ -1,23 +1,24 @@
-.menu-item {
-  min-width: 30%;
-  height: 240px;
-  flex: 1 1 auto;
-  display: flex;
+import styled, { css } from "styled-components";
+
+const largeMenuItemStyles = css`
+  height: 300px;
+`;
+
+export const MenuItemContainer = styled.div`
   align-items: center;
-  justify-content: center;
-  border: 1px solid black;
-  margin: 0 7.5px 15px;
   background-position: center;
   background-size: cover;
+  border: 1px solid black;
+  display: flex;
+  flex: 1 1 auto;
+  height: 240px;
+  justify-content: center;
+  margin: 0 7.5px 15px;
+  min-width: 30%;
   overflow: hidden;
 
   &:hover {
     cursor: pointer;
-
-    & .background-image {
-      transform: scale(1.1);
-      transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-    }
 
     & .content {
       opacity: 0.9;
@@ -27,21 +28,11 @@
   &:first-child {
     margin-right: 7.5px;
   }
-
   &:last-child {
     margin-left: 7.5px;
   }
 
-  &.large {
-    height: 380px;
-  }
-
-  .background-image {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-  }
+  ${props => (props.size === "large" ? largeMenuItemStyles : null)}
 
   .content {
     height: 90px;
@@ -69,4 +60,20 @@
       text-transform: uppercase;
     }
   }
-}
+`;
+
+export const BackgroundImage = styled.div`
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+
+  & .background-image {
+    transform: scale(1.1);
+    transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  }
+
+  ${props => css`
+    background-image: url("${props.imageUrl}");
+  `}
+`;
