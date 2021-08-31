@@ -68,7 +68,7 @@ export const BackgroundImage = styled.div`
   height: 100%;
   width: 100%;
 
-  & .background-image {
+  &:hover {
     transform: scale(1.1);
     transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   }
