@@ -11,7 +11,7 @@ import CheckoutPage from "./pages/checkout/checkout.component";
 import { checkUserSession } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 
-import "./App.css";
+import { GlobalStyle } from "./global.styles";
 
 function App() {
   const currentUser = useSelector(selectCurrentUser);
@@ -23,6 +23,7 @@ function App() {
 
   return (
     <div>
+      <GlobalStyle />
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />

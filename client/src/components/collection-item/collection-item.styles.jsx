@@ -7,6 +7,13 @@ export const StyledCustomButton = styled(CustomButton)`
   position: absolute;
   top: 255px;
   display: none;
+
+  @media screen and (max-width: 800px) {
+    display: block;
+    opacity: 0.9;
+    min-width: unset;
+    padding: 0 10px;
+  }
 `;
 
 export const StyledCollectionItem = styled.div`
@@ -25,6 +32,21 @@ export const StyledCollectionItem = styled.div`
     ${StyledCustomButton} {
       opacity: 0.85;
       display: flex;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 40vw;
+
+    &:hover {
+      .image {
+        opacity: unset;
+      }
+
+      ${StyledCustomButton} {
+        opacity: unset;
+        display: flex;
+      }
     }
   }
 `;

@@ -32,34 +32,39 @@ export const MenuItemContainer = styled.div`
     margin-left: 7.5px;
   }
 
-  ${props => (props.size === "large" ? largeMenuItemStyles : null)}
-
-  .content {
-    height: 90px;
-    padding: 0 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid black;
-    background-color: white;
-    opacity: 0.7;
-    position: absolute;
-
-    .title {
-      font-weight: bold;
-      margin-bottom: 6px;
-      font-size: 22px;
-      color: #180606;
-      text-transform: uppercase;
-    }
-
-    .subtitle {
-      font-weight: lighter;
-      font-size: 16px;
-      text-transform: uppercase;
-    }
+  @media screen and (max-width: 800px) {
+    height: 200px;
+    width: 363px;
   }
+
+  ${props => (props.size === "large" ? largeMenuItemStyles : null)}
+`;
+
+export const StyledContent = styled.div`
+  height: 90px;
+  padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  background-color: white;
+  opacity: 0.7;
+  position: absolute;
+`;
+
+export const StyledContentTitle = styled.h1`
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 22px;
+  color: #180606;
+  text-transform: uppercase;
+`;
+
+export const StyledContentCTA = styled.span`
+  font-weight: lighter;
+  font-size: 16px;
+  text-transform: uppercase;
 `;
 
 export const BackgroundImage = styled.div`
