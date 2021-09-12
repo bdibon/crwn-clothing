@@ -14,7 +14,7 @@
     "heroku-postbuild": "cd client &&  yarn install && yarn install --prod=false --no-lockfile && yarn run build"
   },
   "dependencies": {
-    "compression": "1.7.4",
+    "compression": "^1.7.4",
     "dotenv": "7.0.0",
     "express": "^4.16.4",
     "stripe": "6.28.0"
